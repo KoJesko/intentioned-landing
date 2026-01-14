@@ -236,6 +236,50 @@
             margin-bottom: 2.5rem;
             line-height: 1.7;
         }
+        .hero-word-rotator {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            position: relative;
+        }
+
+        .hero-word {
+            display: inline-block;
+            min-width: 6ch;
+            text-align: left;
+            transition: opacity 0.6s ease, transform 0.6s ease;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero-word.is-switching {
+            opacity: 0;
+            transform: translateY(8px);
+        }
+
+        .hero-dial {
+            width: 18px;
+            height: 18px;
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            border-top-color: rgba(168, 85, 247, 0.9);
+            border-radius: 50%;
+            box-shadow: 0 0 18px rgba(168, 85, 247, 0.35);
+            opacity: 0;
+            transform: scale(0.8) rotate(0deg);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            margin-left: 0.35rem;
+        }
+
+        .hero-dial.is-active {
+            opacity: 1;
+            animation: heroDialSpin 1.8s linear infinite;
+            transform: scale(1);
+        }
+
+        @keyframes heroDialSpin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
 
         .hero-buttons {
             display: flex;
@@ -645,7 +689,7 @@
         </div>
     </nav>
 
-    <div class="status-banner" role="status" aria-live="polite">
+    <div class="status-banner">
         <div class="status-content">
             ⚠️ <strong>Verizon outage:</strong> Some users may experience connectivity issues.
         </div>
@@ -657,7 +701,7 @@
             <span class="hero-badge-dot"></span>
             <span>100% Offline • GDPR Compliant</span>
         </div>
-        <h1>Master Every <span>Conversation</span></h1>
+        <h1>Master Every <span class="hero-word-rotator"><span class="hero-word" id="heroWord">Conversation</span><span class="hero-dial" id="heroDial" aria-hidden="true"></span></span></h1>
         <p class="hero-subtitle">
             Privacy-first social dynamics training. Powered by local LLMs and real-time voice analysis. 
             No cloud, no latency, no data leaks.
@@ -784,7 +828,7 @@
             <div class="stats-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 3rem;">
                 <div class="stat-card" style="text-align: center; padding: 2rem; background: var(--bg-tertiary); border-radius: var(--radius-lg); border: 1px solid var(--border-color);">
                     <div style="font-size: 3rem; font-weight: 800; background: var(--accent-gradient); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">&lt;100</div>
-                    <div style="color: var(--text-secondary); margin-top: 0.5rem;">Response Latency (top-tier GPU)</div>
+                    <div style="color: var(--text-secondary); margin-top: 0.5rem;">Response Latency (top-tier consumer-grade and entry-level business GPU) (milliseconds)</div>
                 </div>
                 <div class="stat-card" style="text-align: center; padding: 2rem; background: var(--bg-tertiary); border-radius: var(--radius-lg); border: 1px solid var(--border-color);">
                     <div style="font-size: 3rem; font-weight: 800; background: var(--accent-gradient); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">0 bytes</div>
@@ -943,6 +987,48 @@
                 navbar.style.background = 'rgba(10, 10, 10, 0.8)';
             }
         });
+
+        // Hero word rotator
+        const heroWordEl = document.getElementById('heroWord');
+        const heroDialEl = document.getElementById('heroDial');
+        const heroWords = [
+            'Conversation',
+            'Interview',
+            'Conference',
+            'Meeting',
+            'Day out',
+            'Debrief',
+            'Presentation',
+            'Negotiation'
+        ];
+        let heroWordIndex = 0;
+
+        function scheduleHeroWordRotate() {
+            if (!heroWordEl) return;
+            const delay = 3500 + Math.random() * 4500;
+            setTimeout(() => {
+                if (!heroWordEl) return;
+                heroWordIndex = (heroWordIndex + 1) % heroWords.length;
+                heroWordEl.classList.add('is-switching');
+                if (heroDialEl) {
+                    heroDialEl.classList.add('is-active');
+                }
+                setTimeout(() => {
+                    heroWordEl.textContent = heroWords[heroWordIndex];
+                    heroWordEl.classList.remove('is-switching');
+                }, 600);
+
+                setTimeout(() => {
+                    heroDialEl?.classList.remove('is-active');
+                }, 1600);
+
+                scheduleHeroWordRotate();
+            }, delay);
+        }
+
+        if (heroWordEl) {
+            scheduleHeroWordRotate();
+        }
 
         // Intersection Observer for fade-in animations
         const observer = new IntersectionObserver((entries) => {
