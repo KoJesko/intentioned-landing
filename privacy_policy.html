@@ -198,7 +198,6 @@
             <li><code>intentioned_tts_engine</code> - Your preferred text-to-speech engine</li>
             <li><code>intentioned_kokoro_voice</code> - Selected Kokoro TTS voice</li>
             <li><code>intentioned_vibevoice_voice</code> - Selected VibeVoice voice</li>
-            <li><code>intentioned_edge_voice</code> - Selected Edge TTS voice</li>
             <li><code>intentioned_stt_engine</code> - Your preferred speech-to-text engine</li>
             <li><code>intentioned_max_tokens</code> - LLM response length setting</li>
             <li><code>intentioned_temperature</code> - LLM creativity setting</li>
@@ -219,10 +218,9 @@
         <h2>6. Third-Party Services</h2>
         <p>The application may interact with external services for the following purposes:</p>
         <ul>
-            <li><strong>Edge TTS (Microsoft):</strong> Text-to-speech synthesis (only the AI's response text is sent)</li>
             <li><strong>CDN resources:</strong> Loading of face-api.js models for eye contact detection</li>
         </ul>
-        <p>No conversation content or personal data is sent to these services beyond what is necessary for their function.</p>
+        <p>All text-to-speech engines (Kokoro, VibeVoice, pyttsx3) run completely offline on your device.</p>
 
         <h2>7. Browser Extension Detection</h2>
         <div class="highlight-box">
@@ -255,7 +253,6 @@
             <li><strong>Text-to-Speech (TTS):</strong>
                 <ul>
                     <li><strong>Kokoro-82M</strong> (default) - Apache 2.0 license, 82M parameters, StyleTTS2 architecture</li>
-                    <li><strong>Edge TTS</strong> - Microsoft, requires internet connection</li>
                     <li><strong>VibeVoice Realtime 0.5B</strong> - 500M parameters, higher quality but resource-intensive</li>
                     <li><strong>pyttsx3</strong> - Local system voices, fully offline</li>
                 </ul>
