@@ -1,0 +1,102 @@
+INTENTIONED.TECH PROPRIETARY LICENSE
+Copyright (C) 2025-2026 Ari Kotler. All Rights Reserved.
+
+================================================================================
+                        PROPRIETARY SOFTWARE LICENSE
+================================================================================
+
+This software and associated documentation files (the "Software") are the
+exclusive property of Ari Kotler, operating as Intentioned.tech.
+
+GRANT OF LICENSE
+----------------
+This license grants you NO rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software without explicit
+written authorization from the copyright holder.
+
+PERMITTED USES (Authorized Users Only)
+--------------------------------------
+If you have obtained a valid commercial license, you may:
+  - Use the Software for personal or commercial purposes as specified in your
+    license agreement
+  - Deploy the Software on hardware you own or control
+  - Create custom scenarios and configurations for your own use
+
+RESTRICTIONS
+------------
+Without a valid commercial license, you may NOT:
+  - Copy, reproduce, or distribute the Software in any form
+  - Modify, adapt, or create derivative works based on the Software
+  - Reverse engineer, decompile, or disassemble the Software
+  - Use the Software for any commercial purpose
+  - Sublicense, rent, lease, or lend the Software to third parties
+  - Remove or alter any proprietary notices, labels, or marks
+
+COMMERCIAL LICENSING
+--------------------
+For commercial licensing inquiries, enterprise deployments, or educational
+institution licenses, contact:
+
+  Email: akotler@pace.edu
+  Web:   https://intentioned.tech/licensing
+
+License tiers available:
+  - Personal License: Single user, single machine
+  - Professional License: Single user, multiple machines
+  - Enterprise License: Organization-wide deployment
+  - Educational License: Academic institutions (discounted)
+
+INTELLECTUAL PROPERTY
+---------------------
+The Software, including but not limited to:
+  - System architecture and modular design
+  - Scenario configuration format and structure
+  - Communication analysis algorithms
+  - User interface design and implementation
+
+constitutes proprietary trade secrets and intellectual property of the
+copyright holder. The selection, arrangement, and composition of components
+represents significant creative and technical work protected under
+international copyright and trade secret laws.
+
+THIRD-PARTY COMPONENTS
+----------------------
+This Software incorporates third-party open-source components, each subject
+to their own license terms. See THIRD_PARTY_LICENSES for details. Your use
+of this Software does not grant you any rights to those components beyond
+what their respective licenses allow.
+
+WARRANTY DISCLAIMER
+-------------------
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF,
+OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+TERMINATION
+-----------
+This license is effective until terminated. Your rights under this license
+will terminate automatically without notice if you fail to comply with any
+of its terms. Upon termination, you must destroy all copies of the Software
+in your possession.
+
+GOVERNING LAW
+-------------
+This license shall be governed by and construed in accordance with the laws
+of the Netherlands, without regard to its conflict of law provisions. Any
+disputes arising under this license shall be subject to the exclusive
+jurisdiction of the courts of the Netherlands.
+
+ENTIRE AGREEMENT
+----------------
+This license constitutes the entire agreement between you and the copyright
+holder concerning the Software and supersedes all prior or contemporaneous
+oral or written communications, proposals, and representations.
+
+================================================================================
+                    © 2025-2026 Ari Kotler. All Rights Reserved.
+                              Intentioned.tech
+================================================================================
