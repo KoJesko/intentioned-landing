@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Intentioned</title>
+    <title>Privacy Policy - Intentioned.tech</title>
     <style>
         :root {
             --bg-primary: #0a0a0f;
@@ -116,18 +116,19 @@
         <a href="/" class="back-link">← Back to Home</a>
         
         <h1>Privacy Policy</h1>
-        <p class="last-updated">Last Updated: January 8, 2026</p>
+        <p class="last-updated">Last Updated: January 13, 2026</p>
         
         <h2>1. Introduction</h2>
         <p>
-            Intentioned ("we", "our", "the application") is a self-hosted, open-source social skills training platform. 
+            Intentioned.tech ("we", "our", "the application") is a self-hosted, open-source social skills training platform. 
             This privacy policy explains how data is collected, stored, and used when you use this application.
         </p>
         
         <div class="highlight-box">
-            <strong>Self-Hosted Notice:</strong> This application is designed to be self-hosted. 
+            <strong>🔒 100% Local Processing:</strong> This application is designed to be self-hosted. 
             All data processing occurs on your local machine or your own server. 
             No data is sent to external third-party services unless explicitly configured by you.
+            <strong>Your voice never leaves your GPU.</strong>
         </div>
         
         <h2>2. Data Collection</h2>
@@ -168,10 +169,11 @@
         </p>
         
         <div class="warning-box">
-            <strong>Repeated Violation Transmission:</strong> If 3 or more similar safety violations are 
+            <strong>Repeated Violation Transmission:</strong> If 3 or more unique safety violations are 
             detected from the same session, a summary report is automatically transmitted to a separate 
-            "transmitted_to_host" folder for host/administrator review. This is designed to identify 
-            patterns of misuse and ensure platform safety. The transmitted reports are stored in:
+            "transmitted_to_host" folder for host/administrator review. Additionally, if 2 or more 
+            <strong>severe</strong> violations are detected, the session is immediately terminated and reported.
+            This is designed to identify patterns of misuse and ensure platform safety. The transmitted reports are stored in:
             <br><br>
             <code>[Documents]/simulation_safety_violations/transmitted_to_host/</code>
         </div>
@@ -241,23 +243,28 @@
         </p>
 
         <h2>8. AI Models Used</h2>
-        <p>This application uses the following AI models, which run locally on your machine or server:</p>
+        <p>This application uses the following AI models, which run 100% locally on your machine or server:</p>
         <ul>
             <li><strong>Speech-to-Text (STT):</strong>
                 <ul>
-                    <li><strong>NVIDIA Parakeet TDT 0.6B v3</strong> (default) - NVIDIA NeMo, CC-BY-4.0 license, 600M parameters</li>
-                    <li><strong>Wav2Vec2</strong> - Meta/Facebook, MIT license, CTC-based transcription</li>
-                    <li><strong>Vosk</strong> - Apache 2.0 license, offline-first, lightweight</li>
+                    <li><strong>NVIDIA Parakeet TDT 0.6B v3</strong> (default) - NVIDIA NeMo, CC-BY-4.0 license, 600M parameters, supports 25 languages</li>
+                    <li><strong>Vosk</strong> - Apache 2.0 license, offline-first, lightweight, 20+ language models</li>
                 </ul>
             </li>
             <li><strong>Text-to-Speech (TTS):</strong>
                 <ul>
                     <li><strong>Kokoro-82M</strong> (default) - Apache 2.0 license, 82M parameters, StyleTTS2 architecture</li>
-                    <li><strong>VibeVoice Realtime 0.5B</strong> - 500M parameters, higher quality but resource-intensive</li>
-                    <li><strong>pyttsx3</strong> - Local system voices, fully offline</li>
+                    <li><strong>VibeVoice Realtime 0.5B</strong> - 500M parameters, higher quality voice cloning</li>
+                    <li><strong>pyttsx3</strong> - Local system voices, fully offline fallback</li>
                 </ul>
             </li>
-            <li><strong>Language Model (LLM):</strong> Configurable, defaults to locally-run open-source models</li>
+            <li><strong>Language Model (LLM):</strong>
+                <ul>
+                    <li><strong>Google Gemma 3 1B</strong> (default) - 4-bit quantized, ~2GB VRAM</li>
+                    <li>Language-specific models available for 28 EU languages</li>
+                </ul>
+            </li>
+            <li><strong>Eye Contact Detection:</strong> Face-API.js - browser-based, no images stored</li>
         </ul>
         <p>All AI processing occurs locally. Model weights are downloaded once and cached on your machine.</p>
         
@@ -287,16 +294,27 @@
             <li>Regularly reviewing and clearing safety violation logs</li>
         </ul>
         
-        <h2>12. Changes to This Policy</h2>
+        <h2>12. Multilingual Support</h2>
+        <p>
+            Intentioned.tech supports 28 EU languages. Language detection and preferences are:
+        </p>
+        <ul>
+            <li>Stored locally in your browser's localStorage</li>
+            <li>Used only to select appropriate AI models and UI translations</li>
+            <li>Never transmitted to external services</li>
+        </ul>
+        
+        <h2>13. Changes to This Policy</h2>
         <p>
             This privacy policy may be updated as the application evolves. 
             Check the "Last Updated" date at the top of this document for the most recent version.
         </p>
         
-        <h2>13. Contact</h2>
+        <h2>14. Contact</h2>
         <p>
-            For questions about this privacy policy or the application, please open an issue on the 
-            <a href="https://github.com/KoJesko/intentioned.tech" target="_blank">GitHub repository</a>.
+            For questions about this privacy policy or the application, please contact us at 
+            <a href="mailto:akotler@pace.edu">akotler@pace.edu</a> or visit 
+            <a href="https://intentioned.tech" target="_blank">intentioned.tech</a>.
         </p>
     </div>
 </body>
