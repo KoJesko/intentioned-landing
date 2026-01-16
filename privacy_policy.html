@@ -130,6 +130,12 @@
             No data is sent to external third-party services unless explicitly configured by you.
             <strong>Your voice never leaves your GPU.</strong>
         </div>
+        
+        <div class="warning-box">
+            <strong>⚠️ External LLM Configuration:</strong> If you configure an external LLM provider (OpenAI, Anthropic, Google, Ollama remote, etc.), 
+            your conversation prompts and context will be sent to those third-party services. Review their privacy policies before use.
+            <strong>We recommend using local models for maximum privacy.</strong>
+        </div>
 
         <h2>2a. Online Demo vs. Self-Hosted</h2>
         <p>
@@ -245,6 +251,38 @@
             <li><strong>IP address:</strong> For GDPR compliance and abuse prevention</li>
         </ul>
         <p>This data is stored in our secure database (Cloudflare D1) and shared with Resend solely for email delivery. You can unsubscribe at any time using the link in any email, and we will stop sending you messages and mark your subscription as inactive. You may also request complete deletion of your data by contacting us.</p>
+        
+        <h2>6b. Clarification: "No Data Leaks" and "No Cloud"</h2>
+        <div class="highlight-box">
+            <strong>What These Claims Mean:</strong>
+            <ul style="margin-top: 10px;">
+                <li><strong>"No data leaks"</strong> refers specifically to your conversation data, audio recordings, and transcripts processed by the Intentioned application on our infrastructure. It does not apply to: (a) your local machine security, or (b) third-party LLMs you configure.</li>
+                <li><strong>"No cloud" and "no latency"</strong> refer to the core conversation interface. External services (payment processing, mailing list, license validation) use cloud infrastructure.</li>
+            </ul>
+        </div>
+        
+        <h2>6c. External LLM Providers</h2>
+        <p>Intentioned supports both local and cloud-based Large Language Models (LLMs). If you configure an external provider, be aware:</p>
+        <ul>
+            <li><strong>Data transmitted:</strong> Conversation prompts, scenario context, and your responses may be sent to the LLM provider</li>
+            <li><strong>Supported providers:</strong> OpenAI, Anthropic, Google (Gemini), local Ollama, LM Studio, and others</li>
+            <li><strong>Your responsibility:</strong> Review the privacy policy of any external LLM service you use</li>
+            <li><strong>Our recommendation:</strong> Use local models (Ollama, LM Studio) for maximum privacy</li>
+        </ul>
+        
+        <h2>6d. Payment Processing & External Services</h2>
+        <p>The following data may be collected and stored outside the local application for service functionality:</p>
+        <ul>
+            <li><strong>Payment information:</strong> Processed by third-party payment providers (e.g., Stripe, PayPal). We do not store full credit card numbers.</li>
+            <li><strong>License activation:</strong> License keys, hardware fingerprints, and activation timestamps stored in our cloud database</li>
+            <li><strong>Mailing list:</strong> Email addresses and preferences as described in section 6a</li>
+        </ul>
+        <p>All externally stored data is:</p>
+        <ul>
+            <li>✅ GDPR-compliant and can be deleted upon request</li>
+            <li>✅ Necessary for service functionality (licensing, communications, payments)</li>
+            <li>✅ Never shared with third parties except as required for service operation</li>
+        </ul>
 
         <h2>7. Browser Extension Detection</h2>
         <div class="highlight-box">
