@@ -11,7 +11,7 @@
             --card-bg: #16161f;
             --text-primary: #f0f0f5;
             --text-secondary: #a0a0b0;
-            --text-muted: #606070;
+            --text-muted: #9ca3af;
             --accent: #6366f1;
             --border-color: rgba(255, 255, 255, 0.08);
         }
@@ -87,6 +87,28 @@
         .faq-answer {
             color: var(--text-secondary);
             padding-left: 36px;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 24px 16px;
+            }
+            
+            .faq-answer {
+                padding-left: 0;
+            }
+            
+            .faq-question {
+                font-size: 1rem;
+            }
+            
+            h1 {
+                font-size: 1.75rem;
+            }
+            
+            ul {
+                padding-left: 16px;
+            }
         }
         
         .faq-answer p {

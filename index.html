@@ -534,6 +534,80 @@
             color: var(--text-primary);
         }
 
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 1001;
+            background: none;
+            border: none;
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background: var(--text-primary);
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 10, 10, 0.98);
+            z-index: 999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+
+        .mobile-menu.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 500;
+            padding: 0.75rem 2rem;
+            transition: color 0.2s;
+        }
+
+        .mobile-menu a:hover {
+            color: var(--accent-purple);
+        }
+
+        .mobile-menu .btn {
+            margin-top: 1rem;
+            font-size: 1.1rem;
+            padding: 1rem 2rem;
+        }
+
         /* Responsive */
         @media (max-width: 900px) {
             .bento-grid {
@@ -545,11 +619,15 @@
             }
 
             .nav-links {
-                gap: 1rem;
+                display: none;
             }
 
-            .nav-link {
-                display: none;
+            .hamburger {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: flex;
             }
         }
 
@@ -613,8 +691,24 @@
                 <a href="contact.html" class="nav-link">Contact</a>
                 <a href="https://app.intentioned.tech" class="btn btn-primary">Launch Demo</a>
             </div>
+            <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#features" onclick="closeMobileMenu()">Features</a>
+        <a href="#tech" onclick="closeMobileMenu()">Tech</a>
+        <a href="faq.html">FAQ</a>
+        <a href="privacy_policy.html">Privacy</a>
+        <a href="contact.html">Contact</a>
+        <a href="license.html">License</a>
+        <a href="https://app.intentioned.tech" class="btn btn-primary">Launch Demo</a>
+    </div>
 
     <main id="main-content">
     <!-- Hero Section -->
@@ -875,7 +969,7 @@
                 © 2025-2026 Ari Kotler. All Rights Reserved. Intentioned.tech
             </div>
             <div class="footer-links">
-                <a href="https://github.com/KoJesko/intentioned.tech/blob/main/LICENSE" class="footer-link" target="_blank">License (Proprietary)</a>
+                <a href="license.html" class="footer-link">License</a>
                 <a href="privacy_policy.html" class="footer-link">Privacy</a>
                 <a href="terms_of_use.html" class="footer-link">Terms</a>
             </div>
