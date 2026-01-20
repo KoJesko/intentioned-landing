@@ -182,7 +182,7 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            padding: clamp(0.75rem, 2vw, 1rem) clamp(1rem, 4vw, 2rem);
+            padding: clamp(0.75rem, 2vw, 1rem) 1.5rem;
             background: rgba(10, 10, 10, 0.8);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border-subtle);
@@ -734,6 +734,10 @@
         }
 
         @media (max-width: 600px) {
+            .navbar {
+                padding: 0.75rem 1rem;
+            }
+
             .hero {
                 padding: 5rem 1rem 3rem;
             }
@@ -1084,6 +1088,6 @@
         </div>
     </footer>
 
-    <script src="main.js" defer></script>
+    <script src="main.js?v=2" defer></script>
 </body>
 </html>
