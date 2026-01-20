@@ -4,14 +4,6 @@
 (function() {
     'use strict';
 
-    // Trigger page load animations
-    window.addEventListener('load', function() {
-        // Small delay for smoother effect
-        setTimeout(function() {
-            document.body.classList.add('loaded');
-        }, 100);
-    });
-
     // Scroll-triggered animations with Intersection Observer
     const scrollObserver = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
