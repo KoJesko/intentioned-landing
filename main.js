@@ -160,13 +160,17 @@
     } else {
         setTimeout(loadFonts, 100);
     }
+})();
 
-    // Mobile hamburger menu
+// Mobile hamburger menu - needs to run after DOM is fully loaded
+document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
 
     if (hamburger && mobileMenu) {
-        hamburger.addEventListener('click', () => {
+        hamburger.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
             hamburger.classList.toggle('active');
             mobileMenu.classList.toggle('active');
             hamburger.setAttribute('aria-expanded', hamburger.classList.contains('active'));
@@ -176,16 +180,26 @@
         });
 
         // Close menu when clicking a link
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
+        mobileMenu.querySelectorAll('a').forEach(function(link) {
+            link.addEventListener('click', function() {
                 hamburger.classList.remove('active');
                 mobileMenu.classList.remove('active');
                 hamburger.setAttribute('aria-expanded', 'false');
                 document.body.style.overflow = '';
             });
         });
+        
+        // Close menu when clicking outside
+        mobileMenu.addEventListener('click', function(e) {
+            if (e.target === mobileMenu) {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            }
+        });
     }
-})();
+});
 
 // Global function for closing mobile menu (used by inline onclick)
 function closeMobileMenu() {
