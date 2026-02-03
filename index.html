@@ -995,30 +995,135 @@
         }
 
         @media (max-width: 768px) {
+            /* Reduce section spacing */
+            .sustainability-section {
+                padding: 2rem 1rem;
+            }
+            
             .sustainability-card {
-                padding: 32px 24px;
+                padding: 24px 16px;
+                border-radius: 16px;
             }
+            
+            .sustainability-card .card-subtitle {
+                font-size: 10px;
+                letter-spacing: 0.1em;
+            }
+            
             .sustainability-card .card-headline {
-                font-size: 2rem;
+                font-size: 1.75rem;
+                margin-bottom: 24px;
             }
+            
+            /* Force visibility - disable scroll animations on mobile */
+            .table-row-animate,
+            .commitment-item {
+                opacity: 1 !important;
+                transform: none !important;
+                filter: none !important;
+            }
+            
+            /* Transform table into stacked cards */
             .comparison-table {
-                grid-template-columns: 1fr;
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+                border: none;
+                border-radius: 0;
+                margin-bottom: 24px;
             }
-            .table-header:not(:first-child) {
+            
+            /* Hide all headers */
+            .table-header {
                 display: none;
             }
+            
+            /* Style metric labels as card headers */
             .table-cell.label {
-                background: rgba(99, 102, 241, 0.1);
-                font-size: 0.9rem;
-            }
-            .table-cell:not(.label)::before {
-                content: attr(data-label);
-                display: block;
-                font-size: 10px;
-                color: var(--text-muted);
+                background: rgba(99, 102, 241, 0.15);
+                border-radius: 12px 12px 0 0;
+                padding: 12px 16px;
+                font-size: 0.85rem;
+                font-weight: 700;
                 text-transform: uppercase;
-                letter-spacing: 0.1em;
-                margin-bottom: 4px;
+                letter-spacing: 0.05em;
+                color: var(--accent-purple);
+                border-bottom: none;
+                margin-top: 8px;
+            }
+            
+            .table-cell.label:first-of-type {
+                margin-top: 0;
+            }
+            
+            /* Style the value cells */
+            .table-cell:not(.label) {
+                background: rgba(255, 255, 255, 0.03);
+                padding: 12px 16px;
+                border-bottom: none;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+            
+            .table-cell:not(.label)::before {
+                font-size: 14px;
+                flex-shrink: 0;
+            }
+            
+            .table-cell.negative::before {
+                content: "❌ Big Tech:";
+                color: #f87171;
+                font-weight: 600;
+                min-width: 90px;
+            }
+            
+            .table-cell.positive::before {
+                content: "✅ Us:";
+                color: #4ade80;
+                font-weight: 600;
+                min-width: 90px;
+            }
+            
+            .table-cell.positive {
+                border-radius: 0 0 12px 12px;
+                margin-bottom: 0;
+            }
+            
+            /* Commitments section mobile */
+            .commitments-section {
+                padding-top: 24px;
+            }
+            
+            .commitments-header {
+                font-size: 10px;
+                margin-bottom: 16px;
+            }
+            
+            .commitment-item {
+                padding: 12px 0;
+                gap: 12px;
+            }
+            
+            .commitment-icon {
+                width: 36px;
+                height: 36px;
+                font-size: 16px;
+                border-radius: 8px;
+            }
+            
+            .commitment-content h4 {
+                font-size: 1rem;
+            }
+            
+            .commitment-content p {
+                font-size: 0.85rem;
+            }
+            
+            .sustainability-footer {
+                margin-top: 20px;
+                padding-top: 16px;
+                font-size: 0.7rem;
             }
         }
 
