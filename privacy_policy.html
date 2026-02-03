@@ -71,20 +71,11 @@
             margin-bottom: 8px;
         }
         
-        .highlight-box {
-            background: rgba(99, 102, 241, 0.1);
-            border: 1px solid rgba(99, 102, 241, 0.3);
-            border-radius: 8px;
-            padding: 16px;
+        .notice-box {
             margin: 16px 0;
-        }
-        
-        .warning-box {
-            background: rgba(239, 68, 68, 0.1);
-            border: 1px solid rgba(239, 68, 68, 0.3);
-            border-radius: 8px;
-            padding: 16px;
-            margin: 16px 0;
+            padding: 16px 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
         }
         
         code {
@@ -124,35 +115,35 @@
             This privacy policy explains how data is collected, stored, and used when you use this application.
         </p>
         
-        <div class="highlight-box">
-            <strong>🔒 100% Local Processing:</strong> This application is designed to be self-hosted. 
+        <p>
+            <strong>100% Local Processing:</strong> This application is designed to be self-hosted. 
             All data processing occurs on your local machine or your own server. 
             No data is sent to external third-party services unless explicitly configured by you.
             <strong>Your voice never leaves your GPU.</strong>
-        </div>
+        </p>
         
-        <div class="warning-box">
-            <strong>⚠️ External LLM Configuration:</strong> If you configure an external LLM provider (OpenAI, Anthropic, Google, Ollama remote, etc.), 
+        <p>
+            <strong>External LLM Configuration:</strong> If you configure an external LLM provider (OpenAI, Anthropic, Google, Ollama remote, etc.), 
             your conversation prompts and context will be sent to those third-party services. Review their privacy policies before use.
             <strong>We recommend using local models for maximum privacy.</strong>
-        </div>
+        </p>
 
         <h2>2a. Online Demo vs. Self-Hosted</h2>
         <p>
             The full application is designed to run locally on your own hardware. The online demo at 
             <a href="https://app.intentioned.tech" target="_blank">app.intentioned.tech</a> is hosted by us and is not fully local.
         </p>
-        <div class="warning-box">
+        <p>
             <strong>Online Demo Notice:</strong> When you use the online demo, your audio, transcripts, and prompts are transmitted to our servers
             to generate responses. Do not submit sensitive, regulated, or confidential information in the online demo. We may retain limited
             operational logs for security, abuse prevention, and service reliability.
-        </div>
-        <div class="warning-box">
+        </p>
+        <p>
             <strong>"No Data Leaks" Clarification for Web Demo:</strong> The "no data leaks" claim does not apply to the web demo at app.intentioned.tech. 
             As the <strong>owner</strong> of the demo infrastructure, Intentioned necessarily has access to data processed on our servers. 
             However, as an <strong>operator</strong>, we commit to not leaking, selling, or sharing your data with third parties. 
             For true "no data leaks" protection, use the self-hosted version where you are both owner and operator of your data.
-        </div>
+        </p>
         
         <h2>2. Data Collection</h2>
         <p>The application may collect and process the following types of data during your training sessions:</p>
@@ -165,10 +156,10 @@
         </ul>
         
         <h2>3. Safety Violation Logging</h2>
-        <div class="warning-box">
+        <p>
             <strong>Important:</strong> When content is flagged by our AI moderation system, a record is created 
             to help maintain platform safety and improve moderation accuracy.
-        </div>
+        </p>
         
         <p>Safety violation logs are stored locally on your machine in:</p>
         <ul>
@@ -191,15 +182,14 @@
             improve the moderation system.
         </p>
         
-        <div class="warning-box">
+        <p>
             <strong>Repeated Violation Transmission:</strong> If 3 or more unique safety violations are 
             detected from the same session, a summary report is automatically transmitted to a separate 
             "transmitted_to_host" folder for host/administrator review. Additionally, if 2 or more 
             <strong>severe</strong> violations are detected, the session is immediately terminated and reported.
             This is designed to identify patterns of misuse and ensure platform safety. The transmitted reports are stored in:
-            <br><br>
             <code>[Documents]/simulation_safety_violations/transmitted_to_host/</code>
-        </div>
+        </p>
         
         <h2>4. Cookies and Local Storage</h2>
         <p>This application uses cookies to remember your preferences across sessions:</p>
@@ -208,15 +198,13 @@
             <li><strong>UI Preferences:</strong> Selected scenario, microphone mode, mute state</li>
         </ul>
         
-        <div class="highlight-box">
-            <strong>Cookie Details:</strong>
-            <ul>
-                <li>Cookies are stored locally in your browser only</li>
-                <li>No cookies are transmitted to external servers</li>
-                <li>Cookies expire after 1 year of inactivity</li>
-                <li>You can clear cookies at any time through your browser settings</li>
-            </ul>
-        </div>
+        <p><strong>Cookie Details:</strong></p>
+        <ul>
+            <li>Cookies are stored locally in your browser only</li>
+            <li>No cookies are transmitted to external servers</li>
+            <li>Cookies expire after 1 year of inactivity</li>
+            <li>You can clear cookies at any time through your browser settings</li>
+        </ul>
         
         <p>Cookies used by this application:</p>
         <ul>
@@ -259,13 +247,11 @@
         <p>This data is stored in our secure database (Cloudflare D1) and shared with Resend solely for email delivery. You can unsubscribe at any time using the link in any email, and we will stop sending you messages and mark your subscription as inactive. You may also request complete deletion of your data by contacting us.</p>
         
         <h2>6b. Clarification: "No Data Leaks" and "No Cloud"</h2>
-        <div class="highlight-box">
-            <strong>What These Claims Mean:</strong>
-            <ul style="margin-top: 10px;">
-                <li><strong>"No data leaks"</strong> refers specifically to your conversation data, audio recordings, and transcripts processed by the Intentioned application on our infrastructure. It does not apply to: (a) your local machine security, or (b) third-party LLMs you configure.</li>
-                <li><strong>"No cloud" and "no latency"</strong> refer to the core conversation interface. External services (payment processing, mailing list, license validation) use cloud infrastructure.</li>
-            </ul>
-        </div>
+        <p><strong>What These Claims Mean:</strong></p>
+        <ul>
+            <li><strong>"No data leaks"</strong> refers specifically to your conversation data, audio recordings, and transcripts processed by the Intentioned application on our infrastructure. This type of collection of data does not happen within the application, so we cannot possibly have a data leak from it in this regard. It does not apply to: (a) your local machine security, or (b) third-party LLMs you configure, or (c) payment processing or other interactions with our site, or (d) the online demo.</li>
+            <li><strong>"No cloud" and "no latency"</strong> refer to the core conversation interface. External services (payment processing, mailing list, license validation) use cloud infrastructure.</li>
+        </ul>
         
         <h2>6c. External LLM Providers</h2>
         <p>Intentioned supports both local and cloud-based Large Language Models (LLMs). If you configure an external provider, be aware:</p>
@@ -285,17 +271,17 @@
         </ul>
         <p>All externally stored data is:</p>
         <ul>
-            <li>✅ GDPR-compliant and can be deleted upon request</li>
-            <li>✅ Necessary for service functionality (licensing, communications, payments)</li>
-            <li>✅ Never shared with third parties except as required for service operation</li>
+            <li>GDPR-compliant and can be deleted upon request</li>
+            <li>Necessary for service functionality (licensing, communications, payments)</li>
+            <li>Never shared with third parties except as required for service operation</li>
         </ul>
 
         <h2>7. Browser Extension Detection</h2>
-        <div class="highlight-box">
+        <p>
             <strong>Malwarebytes Browser Guard Detection:</strong> This application includes code to detect 
             when Malwarebytes Browser Guard is flagging our domain as a "Risky TLD" (false positive). 
             This detection is used solely to display a helpful warning banner explaining how to whitelist the site.
-        </div>
+        </p>
         <p>The detection works by:</p>
         <ul>
             <li>Attempting to load a small invisible resource from our own domain to detect if it's being blocked</li>
@@ -335,10 +321,10 @@
         <p>All AI processing occurs locally. Model weights are downloaded once and cached on your machine.</p>
         
         <h2>9. License Key System</h2>
-        <div class="highlight-box">
+        <p>
             <strong>License Validation:</strong> If you are using a licensed version of Intentioned.tech, 
             the application may communicate with our license server to validate your license key.
-        </div>
+        </p>
         <p>The license validation system collects the following data:</p>
         <ul>
             <li><strong>License key:</strong> Your unique license key (transmitted securely)</li>

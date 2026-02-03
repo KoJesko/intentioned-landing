@@ -152,6 +152,255 @@
         .delay-5 { animation-delay: 0.5s; }
         .delay-6 { animation-delay: 0.6s; }
 
+        /* Scroll-triggered zoom animation */
+        .scroll-zoom {
+            opacity: 0;
+            transform: scale(0.85);
+            transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .scroll-zoom.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Staggered row animations for grid */
+        .grid-row-animate {
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .grid-row-animate.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Market Analysis Block Styles */
+        .market-analysis-wrapper {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            padding: 4rem 2rem;
+            font-family: var(--font-sans);
+        }
+
+        .analysis-card {
+            background: rgba(13, 13, 18, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 0;
+            width: 90%;
+            max-width: 550px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+        }
+
+        .analysis-card .card-header,
+        .analysis-card .comparison-grid {
+            padding: 0 24px;
+        }
+
+        .analysis-card .card-header {
+            padding-top: 24px;
+            margin-bottom: 20px;
+        }
+
+        .analysis-card .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .analysis-card .badge {
+            background: linear-gradient(90deg, #4f46e5, #818cf8);
+            color: #fff;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .analysis-card .version {
+            color: #555;
+            font-family: var(--font-mono);
+            font-size: 11px;
+        }
+
+        .analysis-card .card-header h3 {
+            color: #fff;
+            margin: 12px 0 0 0;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1.2fr 1.2fr;
+            gap: 16px;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .grid-header {
+            font-size: 10px;
+            text-transform: uppercase;
+            color: #555;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .grid-header.highlight {
+            color: #818cf8;
+        }
+
+        .grid-header.dimmed {
+            color: #555;
+        }
+
+        .grid-label {
+            color: #aaa;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .grid-value {
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .grid-value.dim {
+            color: #555;
+        }
+
+        .grid-value.negative {
+            color: #f87171;
+        }
+
+        .grid-value.positive {
+            color: #4ade80;
+            font-weight: 700;
+        }
+
+        .grid-value.highlight {
+            color: #fff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+
+        .product-pitch {
+            background: rgba(255, 255, 255, 0.02);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 24px;
+        }
+
+        .product-pitch .divider {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+            color: #4f46e5;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .product-pitch .divider::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: rgba(79, 70, 229, 0.3);
+            margin-left: 10px;
+        }
+
+        .product-pitch h4 {
+            margin: 0 0 8px 0;
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .pitch-text {
+            color: #ccc;
+            font-size: 14px;
+            line-height: 1.5;
+            margin: 0 0 20px 0;
+        }
+
+        .accent-text {
+            color: #4ade80;
+            font-weight: 600;
+        }
+
+        .tech-specs {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .spec-item {
+            display: flex;
+            gap: 12px;
+            font-size: 13px;
+            color: #aaa;
+            align-items: start;
+        }
+
+        .spec-item .code {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: var(--font-mono);
+            color: #e2e8f0;
+            font-size: 12px;
+        }
+
+        .spec-item strong {
+            color: #fff;
+        }
+
+        .analysis-card .footer-note {
+            background: #050505;
+            padding: 12px 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .analysis-card .footer-note p {
+            margin: 0;
+            font-size: 10px;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 480px) {
+            .comparison-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+            .comparison-grid .grid-header {
+                display: none;
+            }
+            .comparison-grid .grid-label {
+                grid-column: span 2;
+                margin-top: 10px;
+                color: #fff;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+                padding-bottom: 8px;
+            }
+            .product-pitch {
+                padding: 20px;
+            }
+            .analysis-card .header-top {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
         /* Hero elements animate immediately on render (CSS-only, no JS needed) */
         .hero-badge {
             opacity: 0;
@@ -571,6 +820,208 @@
             font-size: 1rem;
         }
 
+        /* Sustainability Index Card - Enhanced Styles */
+        .sustainability-section {
+            padding: 4rem 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 0;
+        }
+
+        .sustainability-card {
+            background: rgba(13, 13, 18, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 48px;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            backdrop-filter: blur(16px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .sustainability-card .card-subtitle {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--accent-purple);
+            margin-bottom: 12px;
+        }
+
+        .sustainability-card .card-headline {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 40px;
+            letter-spacing: -0.02em;
+        }
+
+        /* Comparison Table */
+        .comparison-table {
+            display: grid;
+            grid-template-columns: 1.5fr 1.2fr 1.2fr;
+            gap: 0;
+            margin-bottom: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .table-header {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 16px 20px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .table-header.highlight {
+            color: #818cf8;
+        }
+
+        .table-cell {
+            padding: 20px;
+            font-size: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .table-cell.label {
+            color: var(--text-primary);
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .table-cell.negative {
+            color: #f87171;
+        }
+
+        .table-cell.neutral {
+            color: var(--text-muted);
+        }
+
+        .table-cell.positive {
+            color: #4ade80;
+            font-weight: 600;
+        }
+
+        .table-row-animate {
+            opacity: 0;
+            transform: translateY(20px);
+            filter: blur(8px);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .table-row-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0);
+        }
+
+        /* Commitments Section */
+        .commitments-section {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 40px;
+        }
+
+        .commitments-header {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--accent-purple);
+            margin-bottom: 24px;
+        }
+
+        .commitment-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            opacity: 0;
+            transform: translateX(-20px);
+            filter: blur(8px);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .commitment-item.visible {
+            opacity: 1;
+            transform: translateX(0);
+            filter: blur(0);
+        }
+
+        .commitment-item:last-child {
+            border-bottom: none;
+        }
+
+        .commitment-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(99, 102, 241, 0.15);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .commitment-content h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .commitment-content p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .sustainability-footer {
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .sustainability-card {
+                padding: 32px 24px;
+            }
+            .sustainability-card .card-headline {
+                font-size: 2rem;
+            }
+            .comparison-table {
+                grid-template-columns: 1fr;
+            }
+            .table-header:not(:first-child) {
+                display: none;
+            }
+            .table-cell.label {
+                background: rgba(99, 102, 241, 0.1);
+                font-size: 0.9rem;
+            }
+            .table-cell:not(.label)::before {
+                content: attr(data-label);
+                display: block;
+                font-size: 10px;
+                color: var(--text-muted);
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                margin-bottom: 4px;
+            }
+        }
+
         /* CTA Section */
         .cta {
             padding: 8rem 2rem;
@@ -850,9 +1301,81 @@
 
     </section>
 
+    <!-- The Vibe Check Section -->
+    <section class="sustainability-section" id="sustainability">
+        <div class="sustainability-card">
+            <div class="card-subtitle">Cloud AI is a hostage situation. We are the bolt cutters.</div>
+            <h2 class="card-headline">The Vibe Check</h2>
+            
+            <!-- Comparison Table -->
+            <div class="comparison-table">
+                <div class="table-header">Metric</div>
+                <div class="table-header">Big Tech AI</div>
+                <div class="table-header highlight">WinRAR (1995)</div>
+                
+                <div class="table-cell label table-row-animate">Business Model</div>
+                <div class="table-cell negative table-row-animate">Burn VC Cash</div>
+                <div class="table-cell positive table-row-animate">The 40 day trial that you know you will use for 20 years</div>
+
+                <div class="table-cell label table-row-animate">Retention Strategy</div>
+                <div class="table-cell negative table-row-animate">Stockholm Syndrome</div>
+                <div class="table-cell positive table-row-animate">Guilt-Based Loyalty</div>
+
+                <div class="table-cell label table-row-animate">Profit</div>
+                <div class="table-cell negative table-row-animate">-$27B Net (OpenAI, 2025)</div>
+                <div class="table-cell positive table-row-animate">+$20M-40M Net (The "Trial") (Widely sourced estimate)</div>
+                
+                <div class="table-cell label table-row-animate">Life Expectancy</div>
+                <div class="table-cell negative table-row-animate">Until the IPO Flops</div>
+                <div class="table-cell positive table-row-animate">Heat Death of the Universe</div>
+            </div>
+            
+            <!-- Philosophy Section -->
+            <div class="commitments-section">
+                <div class="commitments-header">Our Philosophy</div>
+                
+                <div class="commitment-item" id="commitment1">
+                    <div class="commitment-icon">💀</div>
+                    <div class="commitment-content">
+                        <h4>Hard to Kill</h4>
+                        <p>If we go bust, we release the unlock keys. No bricked software. No sad "Goodbye" emails.</p>
+                    </div>
+                </div>
+                
+                <div class="commitment-item" id="commitment2">
+                    <div class="commitment-icon">🔧</div>
+                    <div class="commitment-content">
+                        <h4>It Just Works</h4>
+                        <p>We don't care about your data. We just want your config files to look clean.</p>
+                    </div>
+                </div>
+                
+                <div class="commitment-item" id="commitment3">
+                    <div class="commitment-icon">👻</div>
+                    <div class="commitment-content">
+                        <h4>Ghost Mode</h4>
+                        <p>Zero tracking. Zero logs. We couldn't sell your data even if we wanted to.</p>
+                    </div>
+                </div>
+                
+                <div class="commitment-item" id="commitment4">
+                    <div class="commitment-icon">📚</div>
+                    <div class="commitment-content">
+                        <h4>WinRAR vs. Us</h4>
+                        <p>Our only difference? Our software isn't an eternal trial. But we'll always be on your side—with dollarization plans and non-profit pricing with minimal verification.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sustainability-footer">
+                *When using local LLMs. Configuring external providers (OpenAI, Anthropic) sends prompts to their APIs—review their privacy policies.
+            </div>
+        </div>
+    </section>
+
     <!-- Features Section -->
     <section class="features" id="features">
-        <div class="section-header">
+        <div class="section-header scroll-zoom">
             <h2>Built for Privacy. Designed for Growth.</h2>
             <p>Everything runs locally on your machine. Your conversations stay yours.</p>
         </div>
@@ -920,7 +1443,7 @@
                    Enterprise-grade safety for educational and professional environments.</p>
             </div>
 
-            <div class="bento-card">
+            <div class="bento-card featured">
                 <div class="bento-icon">🌍</div>
                 <h3>Multilingual Support</h3>
                 <p>Full support for English, German, French, Spanish, Italian, Dutch, Portuguese, 
@@ -1069,8 +1592,8 @@
         <div style="max-width: 1200px; margin: 0 auto; color: var(--text-secondary); font-size: 0.85rem; line-height: 1.7;">
             <p style="margin-bottom: 0.75rem;"><strong style="color: var(--text-primary);">*Important Clarifications:</strong></p>
             <ul style="padding-left: 1.5rem; margin: 0;">
-                <li><strong>"No data leaks"</strong> refers to your conversation data processed by the Intentioned application. Your local machine's security is your responsibility. If you configure external LLMs (OpenAI, Anthropic, Google, etc.), your prompts and data are sent to those services—please review their respective privacy policies.</li>
-                <li><strong>"No cloud" and "no latency"</strong> refer to the core application interface running locally. External services like payment processing, mailing list, and license validation operate via cloud and are GDPR-compliant. Data collected for these services can be deleted upon request.</li>
+                <li><strong>"No data leaks"</strong> refers to your conversation data processed by the Intentioned application. Your local machine's security is your responsibility. If you configure external LLMs (OpenAI, Anthropic, Google, etc.), your prompts and data are sent to those services—please review their respective privacy policies. This claim also does not apply to payment processing or other interactions with our site. See our privacy policy and terms of use for more information.</li>
+                <li><strong>"No cloud" and "no latency"</strong> refer to the core application interface running locally. External services like payment processing, mailing list, and license validation operate via cloud and are GDPR-compliant. Data collected for these services can be deleted upon request. The built in content moderation, if enabled, may send data to the app operator but not Intentioned. This is toggleable but on by default. Always check the setting of the content moderation before using the app.</li>
                 <li><strong>External LLMs:</strong> Intentioned supports both local and cloud-based LLMs. When using cloud LLMs, your prompts may contain conversation context. We recommend using local models for maximum privacy.</li>
                 <li><strong>Payment & Services:</strong> Payment processing, mailing list subscriptions, and license activation data are stored securely in our cloud infrastructure. This data is GDPR-compliant and can be deleted upon request by contacting us.</li>
             </ul>

@@ -49,6 +49,44 @@ document.addEventListener('DOMContentLoaded', function() {
         rootMargin: '0px 0px -50px 0px'
     });
 
+    // Scroll zoom observer with lower threshold for zoom effect
+    const scrollZoomObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -80px 0px'
+    });
+
+    // Staggered row animation observer
+    const gridRowObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                // Add staggered delay based on element index
+                const allRows = document.querySelectorAll('.grid-row-animate');
+                const index = Array.from(allRows).indexOf(entry.target);
+                entry.target.style.transitionDelay = (index * 0.05) + 's';
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -30px 0px'
+    });
+
+    // Observe scroll-zoom elements
+    document.querySelectorAll('.scroll-zoom').forEach(function(el) {
+        scrollZoomObserver.observe(el);
+    });
+
+    // Observe grid row animations with stagger
+    document.querySelectorAll('.grid-row-animate').forEach(function(el) {
+        gridRowObserver.observe(el);
+    });
+
     // Add scroll animation class to section headers and cards
     document.querySelectorAll('.section-header, .terminal, .stat-card, .tech-pills, .cta h2, .cta p, .cta > div').forEach(function(el) {
         el.classList.add('animate-on-scroll');
@@ -82,6 +120,62 @@ document.addEventListener('DOMContentLoaded', function() {
             } else {
                 navbar.style.background = 'rgba(10, 10, 10, 0.8)';
             }
+        });
+    }
+
+    // Sustainability Index - Table Row Animation
+    const tableRowElements = document.querySelectorAll('.table-row-animate');
+    if (tableRowElements.length > 0) {
+        const tableObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    // Get all table-row-animate elements within the same row
+                    const allCells = Array.from(tableRowElements);
+                    const currentIndex = allCells.indexOf(entry.target);
+                    const rowIndex = Math.floor(currentIndex / 3); // 3 cells per row
+                    
+                    // Add delay based on row index for staggered effect
+                    setTimeout(function() {
+                        entry.target.classList.add('visible');
+                    }, (rowIndex % 3) * 150); // Stagger by 150ms per row
+                    
+                    tableObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.2,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        tableRowElements.forEach(function(el) {
+            tableObserver.observe(el);
+        });
+    }
+
+    // Sustainability Index - Commitment Items Animation
+    const commitmentItems = document.querySelectorAll('.commitment-item');
+    if (commitmentItems.length > 0) {
+        const commitmentObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry, idx) {
+                if (entry.isIntersecting) {
+                    const allItems = Array.from(commitmentItems);
+                    const itemIndex = allItems.indexOf(entry.target);
+                    
+                    // Stagger the reveal
+                    setTimeout(function() {
+                        entry.target.classList.add('visible');
+                    }, itemIndex * 200);
+                    
+                    commitmentObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.3,
+            rootMargin: '0px 0px -30px 0px'
+        });
+
+        commitmentItems.forEach(function(item) {
+            commitmentObserver.observe(item);
         });
     }
 

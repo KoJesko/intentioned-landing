@@ -71,20 +71,11 @@
             margin-bottom: 8px;
         }
         
-        .highlight-box {
-            background: rgba(99, 102, 241, 0.1);
-            border: 1px solid rgba(99, 102, 241, 0.3);
-            border-radius: 8px;
-            padding: 16px;
+        .notice-box {
             margin: 16px 0;
-        }
-        
-        .warning-box {
-            background: rgba(239, 68, 68, 0.1);
-            border: 1px solid rgba(239, 68, 68, 0.3);
-            border-radius: 8px;
-            padding: 16px;
-            margin: 16px 0;
+            padding: 16px 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
         }
         
         a {
@@ -128,20 +119,20 @@
             <li>Eye contact tracking (optional)</li>
         </ul>
         
-        <div class="highlight-box">
+        <p>
             <strong>Educational Purpose:</strong> This Application is designed for educational and training purposes only. 
             It is not a substitute for professional therapy, counseling, or medical advice.
-        </div>
+        </p>
 
         <h2>2a. Online Demo Use</h2>
         <p>
             The online demo at <a href="https://app.intentioned.tech" target="_blank">app.intentioned.tech</a> is hosted by us and may process
             your inputs on our servers to provide the demo experience. The online demo is not fully offline or local.
         </p>
-        <div class="warning-box">
+        <p>
             <strong>Do not submit sensitive data:</strong> Avoid sharing confidential, regulated, or personally sensitive information in the
             online demo. Use the self-hosted version for maximum privacy and control.
-        </div>
+        </p>
         
         <h2>3. License</h2>
         <p>
@@ -154,15 +145,13 @@
             <li>Reverse engineering, decompiling, or disassembly is prohibited</li>
             <li>Sublicensing, renting, or lending the software to third parties is prohibited</li>
         </ul>
-        <div class="highlight-box">
-            <strong>License Tiers Available:</strong>
-            <ul style="margin-bottom: 0;">
-                <li><strong>Personal License:</strong> Single user, single machine</li>
-                <li><strong>Professional License:</strong> Single user, multiple machines</li>
-                <li><strong>Enterprise License:</strong> Organization-wide deployment</li>
-                <li><strong>Educational License:</strong> Academic institutions (discounted)</li>
-            </ul>
-        </div>
+        <p><strong>License Tiers Available:</strong></p>
+        <ul>
+            <li><strong>Personal License:</strong> Single user, single machine</li>
+            <li><strong>Professional License:</strong> Single user, multiple machines</li>
+            <li><strong>Enterprise License:</strong> Organization-wide deployment</li>
+            <li><strong>Educational License:</strong> Academic institutions (discounted)</li>
+        </ul>
         <p>
             For commercial licensing inquiries, contact: <a href="mailto:akotler@pace.edu">akotler@pace.edu</a>
         </p>
@@ -195,11 +184,11 @@
         </ul>
         
         <h2>4a. Enterprise and Organizational Use - Custom Policy Compliance</h2>
-        <div class="warning-box">
+        <p>
             <strong>Company/Organization Policy Requirement:</strong> If you are deploying this Application within 
             a company, organization, educational institution, or any other entity, your organization's custom 
             policies governing the use of this Application <strong>must be compliant with these Terms of Use</strong>.
-        </div>
+        </p>
         <p>Organizations deploying this Application must ensure that:</p>
         <ul>
             <li>Internal policies do not conflict with or undermine these Terms of Use</li>
@@ -236,24 +225,24 @@
             <li><strong>Repeated violations (3+):</strong> Automatically reported to host/administrator for review</li>
         </ul>
         
-        <div class="warning-box">
+        <p>
             <strong>Repeated Violation Policy:</strong> If you submit 3 or more similar safety violations 
             within a session, this pattern will be automatically reported to the host/administrator. 
             This policy exists to prevent systematic misuse of the platform.
-        </div>
+        </p>
         
-        <div class="warning-box">
+        <p>
             <strong>No Guarantee:</strong> While we strive to maintain content safety, no moderation system is perfect. 
             The AI may occasionally flag appropriate content or miss inappropriate content.
-        </div>
+        </p>
 
         <h2>7. Browser Extension Compatibility</h2>
-        <div class="highlight-box">
+        <p>
             <strong>Malwarebytes Browser Guard Notice:</strong> Some browser security extensions 
             (particularly Malwarebytes Browser Guard) may incorrectly flag this domain as "risky" 
             due to the .tech TLD. This is a <strong>false positive</strong>. The .tech domain is a 
             standard, legitimate top-level domain used by developers and technology companies worldwide.
-        </div>
+        </p>
         <p>If you experience blocking:</p>
         <ul>
             <li>The Application will display a warning banner with whitelisting instructions</li>
@@ -298,11 +287,59 @@
         
         <h2>12. Governing Law</h2>
         <p>
-            These Terms shall be governed by and construed in accordance with applicable laws, without regard 
-            to conflict of law principles.
+            These Terms shall be governed by and construed in accordance with the laws of the State of New York, 
+            United States, without regard to conflict of law principles.
         </p>
         
-        <h2>13. Contact</h2>
+        <h2>13. Jurisdiction and Venue</h2>
+        <p>
+            Any legal action or proceeding arising out of or relating to these Terms of Use or your use of the 
+            Application shall be brought exclusively in the following courts:
+        </p>
+        <ul>
+            <li><strong>Federal Cases:</strong> The United States District Court for the Southern District of New York (SDNY)</li>
+            <li><strong>State/Civil Cases:</strong> The Supreme Court of the State of New York, Rockland County</li>
+        </ul>
+        <p>
+            By using this Application, you consent to the exclusive jurisdiction and venue of these courts and 
+            waive any objection to such jurisdiction or venue based on inconvenient forum or otherwise.
+        </p>
+
+        <p>
+            You agree that any claim or cause of action arising out of or related to your use of the Application must be held 
+            in-person in the courts listed above or virtually as agreed upon by Intentioned and the court to comply with the accessibility needs for the company members.
+        </p>
+        
+        <h2>14. Sustainability and End of Life</h2>
+        <p>
+            We believe you should own your tools, not just rent them.
+        </p>
+        <p>
+            In the event that Intentioned ceases commercial operations, dissolves, or enters bankruptcy ("End of Life" or "EOL"), 
+            we grant all existing paid license holders a <strong>perpetual, irrevocable, royalty-free, non-exclusive license</strong> to use the 
+            last stable local version of the Application indefinitely. This license will be provided via a downloadable package or repository access and be Copylefted via a GPL license to protect
+            our legacy and your future with our product.
+            
+        </p>
+        <p><strong>Our Promise:</strong></p>
+        <ul>
+            <li><strong>No Bricks:</strong> We will not remotely disable, lock, or degrade the local functionality of your installed software. However, we may force you to use a new license key that we will give you to gain continued access. As for the forseeable future, this will be done through the configuration tool.</li>
+            <li><strong>Unlock Protocol:</strong> If our authentication servers go offline permanently, we commit to releasing a patch, key, or 
+            configuration update that decouples the local Application from online verification requirements.</li>
+            <li><strong>Local First:</strong> Your local data remains yours. We do not hold your history hostage in a cloud silo.</li>
+        </ul>
+        <p>
+            Note: This pledge applies to the local execution of the software. External dependencies (e.g., third-party APIs like OpenAI or Anthropic) 
+            are subject to their own availability and are not covered by this pledge.
+        </p>
+
+        <p>
+            We also have the right to reclaim any rented technology or services that are not part of the local software itself, 
+            such as cloud hosting, online demos, or proprietary AI models that require server-side processing in the event of a bankruptcy, but a local only copy that 
+            you can run on your own hardware will still be given to you.
+        </p>
+        
+        <h2>15. Contact</h2>
         <p>
             For questions about these Terms, please open an issue on the 
             <a href="https://github.com/KoJesko/intentioned.tech" target="_blank">GitHub repository</a>.
